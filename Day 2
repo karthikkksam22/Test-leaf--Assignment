@@ -1,0 +1,127 @@
+
+
+MAIN FUNCTION CLASS
+package day2;
+
+import java.util.Scanner;
+
+public class TwoWheeler {
+	public static int noOfWheels= 4;
+	public static short noOfMirrors = 3;
+	public static long chassisNumber = 123456312;
+	public static boolean isPuntured = false;
+	public static String bikeName = "Royal Enfield";
+	public static double runningKM = 45324.5;
+	public static void main(String[] args) {
+		// TWO WHEELER
+		System.out.println("TWO WHELLER FUNCTIONALITY");
+		TwoWheeler TW = new TwoWheeler();
+		System.out.println("numnber of Wheels:" + noOfWheels);
+		System.out.println("numnber of Mirror:" + noOfMirrors);
+		System.out.println("numnber of Chassis No:" + chassisNumber);
+		System.out.println("numnber of Punctured:" + isPuntured);
+		System.out.println("numnber of Bike Name:" + bikeName);
+		System.out.println("numnber of Running KM:" + runningKM);
+		//CAR function
+		System.out.println("***************************************************************************************");
+		System.out.println("CAR FUNCTIONALITY");
+		Car ca = new Car();
+		ca.applyAcclerate();
+		ca.applyBreak();
+		ca.applyGear();
+		ca.switchOnAC();
+		//CAR function
+		System.out.println("***************************************************************************************");
+		System.out.println("CAR FUNCTIONALITY WITH 2nd Class");
+		MyCar mycar1 = new MyCar();
+		mycar1.print();
+		//Employee Details
+		System.out.println("***************************************************************************************");
+		System.out.println("Employ Details");
+		Scanner sc= new Scanner(System.in); 
+//Collect Employee Details	
+		System.out.println("Employee Name:");
+		String Name = sc.next();
+		System.out.println("Employee ID:");
+		int  ID = sc.nextInt();
+		System.out.println("Employee Address:");
+		String Address = sc.next();
+		System.out.println("Mobile Number:");
+		long Mobile = sc.nextLong();
+		System.out.println("Salary");
+		double Salary = sc.nextDouble();
+// Print Employee Details using function		
+// Scanner not accepting spaces in name and address
+		EmployeeDetails empDetails = new EmployeeDetails();
+		empDetails.printEmployeename(Name, ID);
+		empDetails.getEmployeeAddress(Address);
+		empDetails.printEmpMobile(Mobile);
+		empDetails.printEmpSalary(Salary);
+		}
+		
+		
+	
+}
+
+	
+
+
+CAR 
+package day2;
+
+public class Car {
+		public void applyBreak()
+		{System.out.println("Break Applied");}
+		public void applyGear()
+		{System.out.println("Gear Changed");}	
+		public void switchOnAC()
+		{System.out.println("AC Switch ON");}
+		public void applyAcclerate()
+		{System.out.println("Accleratd");}
+}
+
+
+MYCAR
+package day2;
+
+public class MyCar {
+
+	Car mycar = new Car();
+public void print(){
+mycar.applyAcclerate();
+mycar.applyBreak();
+mycar.applyGear();
+mycar.switchOnAC();
+}		}
+	
+
+
+EMPLOYEE DETAILS
+package day2;
+
+public class EmployeeDetails {
+
+	
+	public void printEmployeename(String empName, int empID) {
+		System.out.println("Employee Name:"+ empName);
+	    System.out.println("Employee ID:"+ empID);
+		}
+	
+	
+	public void getEmployeeAddress(String empAddress)
+	{
+		System.out.println("Employee Address:"+ empAddress);
+	}
+	public void printEmpSalary(double empSalary)
+	{
+		System.out.println("Employee Salary:"+ empSalary);
+	}
+	public void printEmpMobile(long mobNum)
+	{
+		System.out.println("Employee Mobile Number:"+ mobNum);
+	}
+	
+	
+	
+}
+
