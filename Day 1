@@ -1,5 +1,6 @@
 
 MAIN FUNCTION CLASS
+++++++++++++++++++++++++++++++++++++++++++++++++++
 package day1;
 
 import org.checkerframework.checker.units.qual.C;
@@ -32,7 +33,7 @@ public static void main(String[] args) {
 
 
 PRIME NUMBE 
-
+++++++++++++++++++++++++++++++++++++++++++++++++++
 package day1;
 import java.util.Scanner;
 import java.lang.reflect.Constructor;
@@ -64,6 +65,7 @@ public class PrimeNumber {
 	}	}
 	
 FACRORIAL
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 package day1;
 import java.util.Scanner;
 import java.lang.reflect.Constructor;
@@ -97,6 +99,7 @@ public class Factorial {
 
 
 FIBONACCI
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 package day1;
 import java.util.Scanner;
 import java.lang.reflect.Constructor;
