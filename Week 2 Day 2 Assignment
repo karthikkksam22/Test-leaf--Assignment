@@ -1,0 +1,124 @@
+package SeliniumSetUP;
+
+import org.apache.commons.collections4.bag.SynchronizedSortedBag;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeliniumMain {
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
+	//ChromeDriver driver = new ChromeDriver();
+    FirefoxDriver fDriver = new FirefoxDriver();
+	//driver.get("http://leaftaps.com/opentaps/control/main");
+	fDriver.get("http://leaftaps.com/opentaps/control/main");
+	//driver.manage().window().fullscreen();
+	fDriver.manage().window().fullscreen();
+    //driver.close();
+
+	/*
+	 * **************************************************************************************************************************************************
+	 * Week 2 Day 1 Assignment - 1 - STARTED
+	 * **************************************************************************************************************************************************
+	 */
+
+	
+	WebElement usernameElement = fDriver.findElement(By.id("username"));
+	usernameElement.sendKeys("Demosalesmanager");
+	WebElement PasswordElement = fDriver.findElement(By.name("PASSWORD"));
+	PasswordElement.sendKeys("crmsfa");
+	WebElement buttonElement = fDriver.findElement(By.className("decorativeSubmit"));
+	buttonElement.click();
+	WebElement CRMSFSElement = fDriver.findElement(By.className("crmsfa"));
+	CRMSFSElement.click();
+	WebElement CreateLeadButton = fDriver.findElement(By.linkText("Create Lead"));
+	CreateLeadButton.click();
+	//WebElement CreateLeadButton2 = fDriver.findElement(By.linkText("Create Lead"));
+	//CreateLeadButton2.click();
+	WebElement CompanyName = fDriver.findElement(By.id("createLeadForm_companyName"));
+	CompanyName.sendKeys("Thirumalar and co");
+	//WebElement firstName = fDriver.findElement(By.id("firstName"));
+	WebElement firstName = fDriver.findElement(By.id("createLeadForm_firstName"));
+	WebElement lastName = fDriver.findElement(By.id("createLeadForm_lastName"));
+	WebElement FirstNameLocal = fDriver.findElement(By.id("createLeadForm_firstNameLocal"));
+	firstName.sendKeys("Karthik Kandasamy");
+	lastName.sendKeys("T");
+	FirstNameLocal.sendKeys("Karthik Kandasamy");
+	WebElement Department = fDriver.findElement(By.id("createLeadForm_departmentName"));
+	WebElement Description = fDriver.findElement(By.id("createLeadForm_description"));
+	WebElement email = fDriver.findElement(By.id("createLeadForm_primaryEmail"));
+	WebElement StateDD = fDriver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));	
+			Select State = new Select(StateDD);
+			State.selectByVisibleText("New York");
+	WebElement Create = fDriver.findElement(By.name("submitButton"));
+	Department.sendKeys("Computer Science");
+	Description.sendKeys("this is the test leaf selinium calss assignment");
+	Create.click();
+	String title = fDriver.getTitle();
+	System.out.println("Titel of Page is: "+title);
+/*
+ * **************************************************************************************************************************************************
+ * Week 2 Day 1 Assignment - 1 - COMPLETED
+ * **************************************************************************************************************************************************
+ */
+	
+/*
+ * **************************************************************************************************************************************************
+ * Week 2 Day 1 Assignment - 2 - STARTED
+ * **************************************************************************************************************************************************
+ */
+    WebElement EditButton = fDriver.findElement(By.linkText("Edit"));
+    EditButton.click();
+    WebElement  UpadateDes = fDriver.findElement(By.id("updateLeadForm_description"));
+    UpadateDes.clear();
+    
+    WebElement IMPNote = fDriver.findElement(By.id("updateLeadForm_importantNote"));
+    IMPNote.sendKeys("Thi is a important note");
+    WebElement UpdateButton = fDriver.findElement(By.name("submitButton"));
+    UpdateButton.click();
+  /*
+ * **************************************************************************************************************************************************
+ * Week 2 Day 1 Assignment - 2 - COMPLETED
+ * **************************************************************************************************************************************************
+ */
+     
+ /*
+ * **************************************************************************************************************************************************
+ * Week 2 Day 1 Assignment - 3 - STARTED
+ * **************************************************************************************************************************************************
+ */
+    WebElement DuplicatLead = fDriver.findElement(By.linkText("Duplicate Lead"));
+    DuplicatLead.click();
+    
+    WebElement CompanyName1 = fDriver.findElement(By.id("createLeadForm_companyName"));
+	WebElement firstName1 = fDriver.findElement(By.id("createLeadForm_firstName"));
+    CompanyName1.clear();
+    firstName1.clear();
+    CompanyName1.sendKeys("Thirumalar and co+1");
+    firstName1.sendKeys("Karthik Kandasamy 22");
+	WebElement SubButton1 = fDriver.findElement(By.name("submitButton"));
+	SubButton1.click();
+	String title1 = fDriver.getTitle();
+	System.out.println("Titel of Page is: "+title1);
+ 
+    
+	}    
+    
+	
+/*
+* **************************************************************************************************************************************************
+* Week 2 Day 1 Assignment - 3 - COMPLETED
+* **************************************************************************************************************************************************
+    	
+}
